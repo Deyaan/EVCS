@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="../CSS/User_Main_Page.css">
+</head>
+
+<body id="body" onload="main()">
+    <header>
+        <nav>
+            <div class="brand">
+                <a href="../HTML/Login_Home.html">
+                    <img src="../IMG/logo.png" height="55" width="130" alt="">
+                </a>
+            </div>
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="../HTML/Login_Home.html" class="active">Home</a>
+                    <a href="../HTML/Login_About.html">About</a>
+                    <a href="../HTML/Main_Page.html">Data</a>
+                    <a href="../HTML/Map.html">Map</a>
+                    <a href="../HTML/Chatbot.html">Chatbot</a>
+                    <a href="../HTML/User_Home.html">Logout</a>
+                </div>
+                <div class="search">
+                    <div>
+                        <img src="../IMG/search.png" alt="">
+                        <input id="search" type="text" placeholder="Search City..." >
+                        <button onclick="search()">submit</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        
+    </header>
+    <section id="sec" class="hero">
+        <table>
+        <ul id="list">
+        </ul>
+    </table>
+    <h1 id="message">There is no EV-Station as of Now in this City</h1>
+    </section>
+
+<!--database--->
+<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyAWinTxSrHnsduUx5HZcvI6f3OBHsVWJMU",
+    authDomain: "e-v-station-app-863b4.firebaseapp.com",
+    databaseURL: "https://e-v-station-app-863b4-default-rtdb.firebaseio.com",
+    projectId: "e-v-station-app-863b4",
+    storageBucket: "e-v-station-app-863b4.appspot.com",
+    messagingSenderId: "349543281909",
+    appId: "1:349543281909:web:a9f745461dd54c221dc1bc"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
+<!--database over..-->
+<script>
+    function search(){
+        alert(document.getElementById('search').value);
+        var searchUrl = "../HTML/Main_Page.html?query=" + document.getElementById('search').value;
+        setTimeout(function(){
+                    window.location.replace(searchUrl);
+                }, 1000);
+    }
+</script>
+<script src="../JS/main_page.js"></script>
+</body>
+
+</html>

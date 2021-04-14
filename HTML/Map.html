@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map[to-fro]</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css"
+    />
+    <link rel="stylesheet" href="../CSS/User_Map.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="brand">
+          <a href="../HTML/Login_Home.html">
+            <img src="../IMG/logo.png" height="55" width="130" alt="" />
+          </a>
+        </div>
+        <div class="nav-right">
+          <div class="nav-links">
+            <a href="../HTML/Login_Home.html" class="active">Home</a>
+                    <a href="../HTML/Login_About.html">About</a>
+                    <a href="../HTML/Main_Page.html">Data</a>
+                    <a href="../HTML/Map.html">Map</a>
+                    <a href="../HTML/Chatbot.html">Chatbot</a>
+                    <a href="../HTML/User_Home.html">Logout</a>
+          </div>
+        </div>
+      </nav>
+      <section class="hero">
+        <div id="map"></div>
+        <div class="formBlock">
+          <form id="form">
+            <input
+              type="text"
+              name="start"
+              class="input"
+              id="start"
+              placeholder="Choose starting point"
+            />
+            <input
+              type="text"
+              name="end"
+              class="input"
+              id="destination"
+              placeholder="Choose destination"
+            />
+            <button style="display: none" type="submit">Get Directions</button>
+          </form>
+        </div>
+        <ul id="list"></ul>
+      </section>
+
+      <!--Firebase Libraries-->
+      <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+      <!--database--->
+      <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+
+      <script>
+        var firebaseConfig = {
+          apiKey: "AIzaSyAWinTxSrHnsduUx5HZcvI6f3OBHsVWJMU",
+          authDomain: "e-v-station-app-863b4.firebaseapp.com",
+          databaseURL:
+            "https://e-v-station-app-863b4-default-rtdb.firebaseio.com",
+          projectId: "e-v-station-app-863b4",
+          storageBucket: "e-v-station-app-863b4.appspot.com",
+          messagingSenderId: "349543281909",
+          appId: "1:349543281909:web:a9f745461dd54c221dc1bc",
+        };
+        firebase.initializeApp(firebaseConfig);
+      </script>
+      <!--database over..-->
+
+  
+    </header>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+    <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=lLkSOKe0fGMUWCLjgFFJGwzXMHuIBGxZ"></script>
+    <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-routing.js?key=lLkSOKe0fGMUWCLjgFFJGwzXMHuIBGxZ"></script>
+    <script src="../JS/map.js"></script>
+    
+  </body>
+</html>

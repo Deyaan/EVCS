@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Provider</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="../CSS/Data_Provider.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="brand">
+                <a>
+                    <img src="../IMG/logo.png" height="55" width="130" alt="">
+                </a>
+            </div>
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="../HTML/Admin_Login_Home.html">Home</a>
+                    <a href="../HTML/Admin_Login_About.html">About</a>
+                    <a href="../HTML/Data_Provider.html">Update</a>
+                    <a href="../HTML/Admin_Login_QR_Code.html">QR-Code</a>
+                    <a href="../HTML/Admin_Home.html">Logout</a>
+                </div>
+               
+            </div>
+        </nav>
+        <section class="hero">
+
+            <div class="data-provider" id="DataIn">
+                <h1>Data Provider</h1>
+                <div class="textbox">
+                    <i class="id"></i>
+                    <input id="id" type="text" placeholder="Enter your ID">
+                  </div>
+
+                <div class="textbox">
+                  <i class="name"></i>
+                  <input id="name" type="text" placeholder="Name of your E-V Station :">
+                </div>
+              
+                <div class="textbox">
+                  <i class="email"></i>
+                  <input id="email" type="text" placeholder="Enter your E-mail :">
+                </div>
+
+                <div class="textbox">
+                    <i class="Number"></i>
+                    <input id="number" type="number" placeholder="Enter your Contact Number :">
+                </div>  
+
+                <div class="textbox">
+                    <i class="machine"></i>
+                    <input id="machine" type="number" placeholder="Number of Machines in E-V Station :">
+                </div>
+
+                <div class="textbox">
+                    <i class="data"></i>
+                    <input id="data" type="number" placeholder="Number of cars present in your E-V Station :">
+                </div>
+
+                <div class="textbox">
+                    <i class="city"></i>
+                    <input id="city" type="text" placeholder="Enter the City Name :">
+                </div>
+
+                <div class="textbox">
+                    <i class="address"></i>
+                    <input id="address" type="text" placeholder="EV-Station Postal Address :">
+                </div>
+
+                <div class="textbox">
+                    <label id="datalat">Latitude: </label>
+                </div>
+
+                <div class="textbox">
+                    <label id="datalng">Longitude: </label>
+                </div>
+
+                <div>
+                    <label><input type="checkbox" id="Restro" value="Restro">Restaurants or Rest Area Nearby 🍔 🍕 : </label>
+                </div>                               
+
+                <div class="checkbox">
+                    <label><input type="checkbox" id="Toilet" value="Toilet">Toilet Nearby 🚻</label>
+                </div>
+
+                <div>
+                    <label><input type="checkbox" id="Play_Area" value="Play_Area">Play-Area for Children Nearby ⚽ ⛳ : </label>
+                </div>
+
+                <div class="checkbox">
+                    <label><input type="checkbox" id="Tyre" value="tyre">Tyre Air checking facility 🚗 : </label>
+                </div>
+
+                <div>
+                    <label><input type="checkbox" id="Store" value="store">General Store 🏬 : </label>
+                </div>
+
+                <button class="btn" id="submitbtn">Submit</button>
+                <button class="btn" id="editbtn">Edit</button>
+
+        </section>
+    </header>   
+   
+    <!--database--->
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyAWinTxSrHnsduUx5HZcvI6f3OBHsVWJMU",
+            authDomain: "e-v-station-app-863b4.firebaseapp.com",
+            databaseURL: "https://e-v-station-app-863b4-default-rtdb.firebaseio.com",
+            projectId: "e-v-station-app-863b4",
+            storageBucket: "e-v-station-app-863b4.appspot.com",
+            messagingSenderId: "349543281909",
+            appId: "1:349543281909:web:a9f745461dd54c221dc1bc"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <!--database over..-->
+    <script src="../JS/Admin_Data_Provider.js"></script>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+    $.get('https://www.mapquestapi.com/geocoding/v1/address?key=j76hSnKmAwtc1S4vJ1OSQ8V5dAmQpjWP&inFormat=kvp&outFormat=json&location=Mumbai+Vasai&thumbMaps=false', function(data,status) {
+      alert(status);
+      console.log(data);
+      console.log("Latitude : "+data.results[0].locations[0].latLng.lat);
+      console.log("Longitude : "+data.results[0].locations[0].latLng.lng);
+     $("#datalat").text(data.results[0].locations[0].latLng.lat );
+     $("#datalng").text(data.results[0].locations[0].latLng.lng)
+    });
+  });
+  
+  </script>
+  </body>
+  </html>
+  
+  <!--https://swapi.dev/api/people/?search=a&page="+1 -->
+</body>
+
+</html>

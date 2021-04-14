@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="../CSS/User_Register.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="brand">
+                <a href="../HTML/User_Home.html">
+                    <img src="../IMG/logo.png" height="55" width="130" alt="">
+                </a>
+            </div>
+            <div class="nav-right">
+                <div class="nav-links">
+                  <a href="../HTML/User_Home.html" class="active">Home</a>
+                  <a href="../HTML/User_About.html">About</a>
+                  <a href="../HTML/User_Login.html">Login</a>
+                  <a href="../HTML/User_Register.html">Register</a>
+                  </div>
+               
+            </div>
+        </nav>
+        <section class="hero">
+            <div class="login-box">
+                <h1>Register</h1>
+                <div class="textbox">
+                    <i class="name"></i>
+                    <input id="name" type="text" placeholder="Name">
+                  </div>
+                <div class="textbox">
+                  <i class="email"></i>
+                  <input id="email" type="text" placeholder="E-mail">
+                </div>
+              
+                <div class="textbox">
+                  <i class="pwd"></i>
+                  <input id="password" type="password" placeholder="Password">
+                </div>
+                <button class="btn" onclick="RegisterUser()">Register</button>
+              </div>
+        </section>
+    </header>
+
+    <script src="../JS/User_Register.js"></script>
+
+<!--database--->
+<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyAWinTxSrHnsduUx5HZcvI6f3OBHsVWJMU",
+    authDomain: "e-v-station-app-863b4.firebaseapp.com",
+    databaseURL: "https://e-v-station-app-863b4-default-rtdb.firebaseio.com",
+    projectId: "e-v-station-app-863b4",
+    storageBucket: "e-v-station-app-863b4.appspot.com",
+    messagingSenderId: "349543281909",
+    appId: "1:349543281909:web:a9f745461dd54c221dc1bc"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
+<!--database over..-->
+
+</body>
+
+</html>
