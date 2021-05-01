@@ -127,16 +127,18 @@
 
 <script type="text/javascript">
 
-    $(document).ready(function(){
-    $.get('https://www.mapquestapi.com/geocoding/v1/address?key=j76hSnKmAwtc1S4vJ1OSQ8V5dAmQpjWP&inFormat=kvp&outFormat=json&location=Mumbai+Vasai&thumbMaps=false', function(data,status) {
-      alert(status);
-      console.log(data);
-      console.log("Latitude : "+data.results[0].locations[0].latLng.lat);
-      console.log("Longitude : "+data.results[0].locations[0].latLng.lng);
-     $("#datalat").text(data.results[0].locations[0].latLng.lat );
-     $("#datalng").text(data.results[0].locations[0].latLng.lng)
-    });
-  });
+     if (navigator.geolocation) { //check if geolocation is available
+                navigator.geolocation.getCurrentPosition(function(position){
+                  console.log(position);        
+                  console.log("Latitude : "+position.coords.latitude);
+                  console.log("Longitude : "+position.coords.longitude);
+                  $("#datalat").text(position.coords.latitude );
+                  $("#datalng").text(position.coords.longitude)
+                    });   
+            }
+ else{
+     alert("Not supported..")
+ }
   
   </script>
   </body>
