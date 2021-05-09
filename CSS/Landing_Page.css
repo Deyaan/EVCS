@@ -15,7 +15,7 @@ body {
     background: var(--primary); 
 }
 
-header {
+body {
     background: linear-gradient(135deg, rgba(0,0,0,1),rgba(0,0,0,0.2)),
     url('../IMG/bgpic.jfif');
     opacity: 1;
@@ -65,33 +65,13 @@ header nav .nav-right a.active:after {
     width: 70%;
 }
 
-header nav .nav-right .search > div {
-    background: var(--dark);
-    display: flex;
-    align-items: center;
-    padding: 10px 15px;
-    border-radius: 50px;
-}
-
-header nav .nav-right .search > div input {
-    background: transparent;
-    border: none;
-    outline:none;
-    font-size: 16px;
-    color: #fff;
-}
-
-header nav .nav-right .search > div img {
-    padding-right: 16px;
-}
-
 .hero {
     position: relative;
 }
 
 .hero .cta {
+    margin-top: -100px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
     min-height: calc(100vh - 80px);
 }
@@ -106,6 +86,7 @@ header nav .nav-right .search > div img {
 .hero .cta .left-section {
     padding: 150px 60px 0 330px;
 }
+
 .hero .cta .right-section {
     padding: 150px 330px 0px 0px;
 }
@@ -113,10 +94,31 @@ h1{
     text-align: center;
     font-size: xx-large;
     padding-top: 2rem;
-    font-weight: 1000;
     text-shadow: inherit;
-    color: #3FEF7D;
+    color:#7dd856;
 }
 #logo{
     margin-top: -60px;
+}
+footer{
+    background: #282828;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    padding: 10px;
+}
+footer{
+ text-align: center;
+}
+footer p{
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+footer p a{
+    text-decoration: none;
+    color:#7dd856;
+}
+footer p a:hover{
+opacity: 0.7;
 }
