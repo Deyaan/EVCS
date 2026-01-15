@@ -3,3 +3,5 @@ So, I have tried to develop an app where the users would be able to get real-tim
 
 The biggest challenge I faced while creating this app was to source the live data of the number of vehicles present in a particular EV station at that particular time. Finally, I got an idea for the same and I used QR code Technology which would develop QR codes for every EV station in my app dynamically.
 I won the Whitehat Jr Silicon Valley Challenge for creating this app. There were over 2000 applicants and I was one of the 6 winners.
+
+Explainer Video: https://github.com/Deyaan/EVCS
